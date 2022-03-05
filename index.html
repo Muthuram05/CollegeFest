@@ -9,68 +9,67 @@
     <link href="footer.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <script src="https://kit.fontawesome.com/9cfb58acdb.js" crossorigin="anonymous"></script>
+    <link href="project.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar is-dark">
-        <div class="navbar-brand">
-            <a href="/" class="navbar-item"><strong>SHOP BAZZER</strong></a>
-    
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="main-navbar">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-    
-        <div class="navbar-menu" id="main-navbar">
-            <div class="navbar-start">
-                <div class="navbar-item">
-                    <form method="get" action="{% url 'search' %}">
-                        <div class="field has-addons">
-                            <div class="control">
-                                <input type="text" class="input" placeholder="Search..." name="query" autocomplete="off">
-                            </div>
-                            <div class="control">
-                                <button class="button is-dark is-uppercase">Search</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+  <nav class="navbar is-dark">
+    <div class="navbar-brand">
+        <a href="/" class="navbar-item"><strong>SCADCET</strong></a>
 
-            <div class="navbar-end">
-                <div class="dropdown is-hoverable navbar-item">
-                    <div class="dropdown-trigger">
-                      <button class="button is-uppercase" aria-haspopup="true" aria-controls="dropdown-menu4">
-                        <span>category</span>
-                        <span class="icon is-small">
-                          <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                      <div class="dropdown-content">
-                        <div class="dropdown-item">
-                            {% for category in menu_categories %}
-                               <a href="{% url 'category' category.slug %}" class="navbar-item">{{ category.title }}</a>
-                            {% endfor %}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                <a href="{% url 'contact' %}" class="navbar-item">Contact</a>
-
-                <div class="navbar-item">
-                    <a href="#" class="button is-dark">Cart{% if cart %} ({{ cart|length }}){% endif %}</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <h1>content</h1>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="main-navbar">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
+
+    <div class="navbar-menu" id="main-navbar">
+        <div class="navbar-start">
+
+        </div>
+
+        <div class="navbar-end">
+            <a href="#" class="navbar-item is-uppercase" id="myBtn">Contact</a>
+            <a href="#" class="navbar-item is-dark is-uppercase">Event</a>
+
+        </div>
+    </div>
+</nav>
+
+
+
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+  
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>contact</p>
+      <label>Name:</label>
+      <input type="text" placeholder="Name"><br>
+      <label>Email:</label>
+      <input type="email" placeholder="Email"><br>
+      <label>Message</label>
+      <input type="text" placeholder="message"><br>
+      <a href="#" class="button is-success">Submit</a>
+    </div>
+  
+  </div>
+  
+  <script src="main.js">
+
+  </script>
+  <div class="event">
+    <p>Non-Tech
+
+      Photography Event: Inspiration photos 
+      
+      Business and marketing event: Today business world 
+      
+      Writing competition: 
+      Your favourte leader</p>
+  </div>
     <div class="one">
         <footer>
   
