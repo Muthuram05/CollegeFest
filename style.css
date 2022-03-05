@@ -49,3 +49,13 @@ nav{
     text-decoration: none;
     cursor: pointer;
   }
+
+.events{
+    width: 50%;
+    border: 2px solid;
+    height: 300px;
+
+}
+.event{
+    display: flex;
+}
