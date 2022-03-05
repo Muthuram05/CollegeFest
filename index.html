@@ -6,14 +6,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     <link href="style.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/9cfb58acdb.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Scad college of engineering and technology</h1>
+    <nav class="navbar is-dark">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-item"><strong>SHOP BAZZER</strong></a>
+    
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="main-navbar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+    
+        <div class="navbar-menu" id="main-navbar">
+            <div class="navbar-start">
+                <div class="navbar-item">
+                    <form method="get" action="{% url 'search' %}">
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input type="text" class="input" placeholder="Search..." name="query" autocomplete="off">
+                            </div>
+                            <div class="control">
+                                <button class="button is-dark is-uppercase">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="dropdown is-hoverable navbar-item">
+                    <div class="dropdown-trigger">
+                      <button class="button is-uppercase" aria-haspopup="true" aria-controls="dropdown-menu4">
+                        <span>category</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                      <div class="dropdown-content">
+                        <div class="dropdown-item">
+                            {% for category in menu_categories %}
+                               <a href="{% url 'category' category.slug %}" class="navbar-item">{{ category.title }}</a>
+                            {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                <a href="{% url 'contact' %}" class="navbar-item">Contact</a>
+
+                <div class="navbar-item">
+                    <a href="{% url 'cart' %}" class="button is-dark">Cart{% if cart %} ({{ cart|length }}){% endif %}</a>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="container">
-        
+        <h1>content</h1>
     </div>
-    <footer>
-        <h1></h1>
-    </footer>
+    <div class="one">
+        <footer>
+  
+          <div class="container">
+            <div class="sec aboutus">
+              <h2>ABOUT US</h2>
+              <div class="fit">
+                <img src="image/scad_foot.png" alt="logo" class="img_foot" >
+                <h1 align="left" style="color: #f1f1f1;">SCADCET</h1>
+               </div>
+  
+  
+              <p>SCAD College of Engineering and Technology is an ISO 9001:2015 certified institution.</p>
+              <ul class="sci">
+                <li><a href="https://www.facebook.com/scadengg"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCeIt6nzkPGHWjHpPB46SSpw"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/scadengg"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/scadengg/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            
+  
+              </ul>
+            </div>
+            <div class="sec quicklinks">
+              <h2>Quick links</h2>
+              <ul>
+                <li><a href="pages/about.html">ABOUT US</a></li>
+                <li><a href="pages/contact.html">CONTACT</a></li>
+                <li><a href="#">PRIVACY POLICY US</a></li>
+                <li><a href="pages/help.html">HELP </a></li>
+                <li><a href="pages/feedback.html">FEEDBACK</a></li>
+              </ul>
+            </div>
+            <div class="sec contact">
+              <h2>CONTACT INFO</h2>
+              <ul class="info">
+                <li>
+  
+                  <span><i class="fa fa-map-marker" aria-hidden="true"></i></span><br>
+                  <span>Chersnmahadevi,Tirunelveli </span><br>
+                  <span>Tamil Nadu-627414,India</span>
+                </li>
+                <li>
+                  <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                  <p><a href="tel:+91 4634261701">+91 4634261701</a></p>
+                  <p><a href="tel:+91 4634261731">+91 4634261731</a></p>
+                  <p><a href="tel:+91 9655667188">+91 9655667188</a></p>
+                </li>
+                <li>
+                  <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+                  <p><a href="mailto:admissions@scadengineering.ac.in">admissions@scadengineering.ac.in</a></p>
+                </li>
+  
+  
+              </ul>
+            </div>
+  
+  
+          </div>
+  
+  
+  
+        </footer>
+        <div class="copyright">
+          <p>© Copyright@ 2021 SCAD College of Engineering and Technology. All Rights Reserved.</p>
+        </div>
+  
+      </div>
 </body>
 </html>
